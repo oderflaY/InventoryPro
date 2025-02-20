@@ -3,7 +3,7 @@ import './../styles/App.css'
 const Logo = () => {
     return (
         <div>
-            <p>Inventary</p>
+            <p className=''>Inventary</p>
             <p>Pro</p>
         </div>
     );
