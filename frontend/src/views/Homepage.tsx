@@ -5,7 +5,7 @@ export default function Homepage() {
     {/* Header  */}
     <header className="App-header">
     <a href='/'>
-    <img src="/logo_2.png" className="App-logo" alt="logo" />
+    <img src="/images-home/logo_2.png" className="App-logo" alt="logo" />
     </a>
     <text> </text>
 
@@ -32,7 +32,7 @@ export default function Homepage() {
         <button>Learn More</button>
     </div>
     <div className="hero-image">
-        <img src="sect_I.png" alt="Hero Image" />
+        <img src="/images-home/sect_I.png" alt="Hero Image" />
     </div>
     </section>
 
@@ -40,17 +40,17 @@ export default function Homepage() {
     <section className="features">
     <h2>Improve experience in your inventory</h2>
     <div className="feature">
-        <img src="/logo_idk.png" className="img" alt="logo" />
+        <img src="/images-home/logo_idk.png" className="img" alt="logo" />
         <h3>Multiple Inventories</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
     </div>
     <div className="feature">
-        <img src="/logo_idk.png" className="img" alt="logo" />
+        <img src="/images-home/logo_idk.png" className="img" alt="logo" />
         <h3>Update Inventories</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
     </div>
     <div className="feature">
-        <img src="/logo_idk.png" className="img" alt="logo" />
+        <img src="/images-home/logo_idk.png" className="img" alt="logo" />
         <h3>Security</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
     </div>
@@ -154,7 +154,7 @@ export default function Homepage() {
     {/* Footer */}
     <footer className="footer">
     <div className="footer-logo">
-        <img src="logo_2.png" alt="InventoryPRO Logo"/>
+        <img src="/images-home/logo_2.png" alt="InventoryPRO Logo"/>
     </div>
     <div className="footer-columns">
         <div className="footer-column">
@@ -187,14 +187,14 @@ export default function Homepage() {
     <div className="social-media">
         <h3>Follow us on</h3>
         <div className="social-icons">
-            <img src="face_log.png" alt="Facebook"/>
-            <img src="twi_log.png" alt="Twitter"/>
-            <img src="inst_log.png" alt="Instagram"/>
+            <img src="/images-home/face_log.png" alt="Facebook"/>
+            <img src="/images-home/twi_log.png" alt="Twitter"/>
+            <img src="/images-home/inst_log.png" alt="Instagram"/>
         </div>
         <h3>Get the App</h3>
         <div className="app-buttons">
-            <img src="google-play.png" alt="Google Play"/>
-            <img src="app-store.png" alt="App Store"/>
+            <img src="/images-home/get-google.png" alt="Google Play"/>
+            <img src="/images-home/get-apps.png" alt="App Store"/>
         </div>
     </div>
     </footer>
