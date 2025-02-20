@@ -11,7 +11,7 @@ export default function Router() {
             <Route>
                 <Route path='/auth/login' element={<LoginView/>}/>
                 <Route path='/auth/register'element={<RegisterView/>}/>
-                <Route path='/'element={<Homepage/>}/>
+                <Route path='/auth/homepage'element={<Homepage/>}/>
                 
             </Route>
 
