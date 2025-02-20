@@ -1,5 +1,6 @@
 
 import './styles/App.css'
+import './pages/Homepage'
 
 function App() {
 
@@ -7,7 +8,7 @@ const holamundo = "hola mundo xd"
 
   return (
     <>
-    <h1 className="text-3xl font-bold underline bg-amber-600 " >hola munod</h1>
+    <h1>hola</h1>
     {holamundo}
     </>
   )
