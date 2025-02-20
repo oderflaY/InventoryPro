@@ -4,7 +4,7 @@ export default function RegisterView() {
   return (
     <>
     <div>
-      <h1>hola puta</h1>
+      <h1>hola putaA</h1>
     </div>
     <nav>
         <Link to="/auth/login">
