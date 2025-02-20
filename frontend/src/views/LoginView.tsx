@@ -5,7 +5,7 @@ export default function LoginView() {
     <>
     
     <div className="text-6xl">LoginView</div>
-    <nav>
+    <nav> 
         <Link to="/auth/register">
             No tienes una cuenta? crea una aqi
         </Link>
