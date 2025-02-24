@@ -8,9 +8,9 @@ export default function AuthLayout() {
         {/* Sección izquierda (blanca) */}
         <div className="w-1/2 bg-white flex items-center justify-center ">
           <div className="flex flex-col items-center">
-            <div className="flex items-center space-x-2">
-              <p className="font-bold text-5xl">Inventory</p>
-              <p className="text-blue-800 font-bold text-5xl">Pro</p>
+            <div className="flex items-center">
+              <p className="font-bold text-4xl">Inventory</p>
+              <p className="text-blue-800 font-bold text-4xl">Pro</p>
             </div>
             <Outlet />
           </div>

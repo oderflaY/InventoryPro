@@ -6,32 +6,14 @@ const SplitScreen = () => {
     <div>
     <form 
     onSubmit={() => {}}
-    className="bg-white px-5 py-20 rounded-lg space-y-10 mt-10"
->
+    className="px-5 py-10 rounded-lg space-y-7">
+
     <div className="grid grid-cols-1 space-y-3">
-        <label htmlFor="name" className="text-2xl text-slate-500">Nombre</label>
+        <label htmlFor="handle" className="text-2xl text-slate-500">Username</label>
         <input
-            id="name"
+            id="username"
             type="text"
-            placeholder="Tu Nombre"
-            className="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
-        />
-    </div>
-    <div className="grid grid-cols-1 space-y-3">
-        <label htmlFor="email" className="text-2xl text-slate-500">E-mail</label>
-        <input
-            id="email"
-            type="email"
-            placeholder="Email de Registro"
-            className="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
-        />
-    </div>
-    <div className="grid grid-cols-1 space-y-3">
-        <label htmlFor="handle" className="text-2xl text-slate-500">Handle</label>
-        <input
-            id="handle"
-            type="text"
-            placeholder="Nombre de usuario: sin espacios"
+            placeholder="Username"
             className="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
         />
     </div>
@@ -40,35 +22,26 @@ const SplitScreen = () => {
         <input
             id="password"
             type="password"
-            placeholder="Password de Registro"
-            className="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
+            placeholder="Password"
+            className="bg-slate-100 border-black p-3 rounded-lg placeholder-slate-400 w-96"
         />
     </div>
 
-    <div className="grid grid-cols-1 space-y-3">
-        <label htmlFor="password_confirmation" className="text-2xl text-slate-500">Repetir Password</label>
-        <input
-            id="password"
-            type="password"
-            placeholder="Repetir Password"
-            className="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
-        />
-    </div>
-
+    <div className="text-center">
     <input
         type="submit"
-        className="bg-cyan-400 p-3 text-lg w-full uppercase text-slate-600 rounded-lg font-bold cursor-pointer"
-        value='Crear Cuenta'
-    />  
-</form>
-
+        className="bg-blue-900 p-3 text-lg uppercase text-white rounded-lg font-bold cursor-pointer w-56"
+        value='Login'
+    />
     </div>
-
+  
+</form>
+    </div>
         <nav>
-        <Link to="/auth/register">
-        Ya tienes una cuenta? Crear cuenta
-        </Link>
-    </nav>
+            <Link to="/auth/register">
+                Do you have an account? Sign In
+            </Link>
+        </nav>
     </>
     );
 };
