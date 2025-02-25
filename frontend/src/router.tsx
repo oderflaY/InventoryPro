@@ -1,8 +1,10 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginView from "./views/LoginView";
 import RegisterView from "./views/RegisterView";
-import Homepage from "./views/Homepage";
 import AuthLayout from "./layouts/AuthLayout";
+
+import Homepage from "./views/Homepage";
+import Testrr from "./views/testing_njs";
 
 export default function Router() {
     return (
@@ -13,8 +15,10 @@ export default function Router() {
                     <Route path="/auth/register" element={<RegisterView />} />
                 </Route>
             </Routes>
+
             <Routes>
                 <Route path="/auth/homepage" element={<Homepage />} />
+                <Route path="/test" element={<Testrr />} />
             </Routes>
         </BrowserRouter>
     );
