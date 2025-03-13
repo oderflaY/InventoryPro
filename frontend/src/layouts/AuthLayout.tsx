@@ -6,7 +6,7 @@ export default function AuthLayout() {
     <>
       <div className="flex h-screen">
         {/* Sección izquierda (blanca) */}
-        <div className="w-1/2 bg-white flex items-center justify-center ">
+        <div className="pt-5 w-1/2 bg-white items-center justify-center ">
           <div className="flex flex-col items-center">
             <div className="flex items-center">
               <p className="font-bold text-4xl">Inventory</p>
@@ -17,7 +17,7 @@ export default function AuthLayout() {
         </div>
         {/* Sección derecha (imagen local) */}
         <div
-          className="w-1/2 bg-cover bg-center"
+          className="w-2/3 bg-cover bg-center"
           style={{ backgroundImage: `url(${imagen})` }}
         />{" "}
       </div>
