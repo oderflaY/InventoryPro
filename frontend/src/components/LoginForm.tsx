@@ -112,22 +112,30 @@ function LoginForm() {
 
 
                 <div className="flex space-x-4">
-                    <button
+                    <button disabled
                         onClick={handleGoogleLogin} className="flex items-center px-4 py-2 border rounded-lg shadow gap-2">
                         <img className="w-5 h-5"
                             src="../../public/images-log/google_icon.png"
                             alt="Google Logo"
                         />
+                            Disabled
+                        {/*
+                        <img className="w-5 h-5"
+                            src="../../public/images-log/google_icon.png"
+                            alt="Google Logo"
+                        />
                         Login with Google
+                        */}
                     </button>
 
-                    <button
+                    <button disabled
                         onClick={handleFacebookLogin} className="flex items-center px-4 py-2 border rounded-lg shadow gap-2">
                         <img className="w-5 h-5"
                             src="../../public/images-log/faceb_icon.png"
                             alt="Facebook Logo"
                         />
-                        Login with Facebook
+                            Disabled
+                        {/* Login with Facebook */}
                     </button>
                 </div>
 

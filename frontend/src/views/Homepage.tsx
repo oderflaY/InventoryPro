@@ -205,7 +205,7 @@ export default function Homepage() {
             <a href='#'>
               <img className="w-[24px]" src="/images-home/face_log.png" alt="Facebook" />
             </a>
-            <a href='#'>
+            <a href='https://x.com/InventoryPr0'>
               <img className="w-[24px]" src="/images-home/twi_log.png" alt="Twitter" />
             </a>
             <a href='#'>
