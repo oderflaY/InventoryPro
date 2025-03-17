@@ -14,7 +14,7 @@ import { UsersModule } from './users/users.module';
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
-      url: process.env.DATABASE_URL, // Carga la URL desde el .env
+      url: 'postgresql://inventorypro_user:KzgA4c2YnObjLMbNItCbbEI6v7FPJSLF@dpg-cva4iuqj1k6c739er7a0-a.oregon-postgres.render.com/inventorypro', // Carga la URL desde el .env
       entities: [User], 
       synchronize: true, // Solo en desarrollo, en producción usa migrations
       autoLoadEntities: true,

@@ -13,12 +13,12 @@ export default function Homepage() {
     <>
       {/* Header  */}
       <header className="fixed top-0 left-0 w-full h-[60px] bg-white text-black flex items-center justify-between px-5 shadow-md z-[1000]">
-        <a href='#'>
+        <a href='/homepage'>
           <img src="/images-home/logo_2.png" className="h-[7vmin] w-[28vmin] px-[0.9vmin]" alt="logo" />
         </a>
 
         <nav className="flex gap-5">
-          <a className="text-black text-[16px] font-bold hover:underline" href="#">Home</a>
+          <a className="text-black text-[16px] font-bold hover:underline" href="/homepage">Home</a>
           <a className="text-black text-[16px] font-bold hover:underline" href="#">Servicies</a>
           <a className="text-black text-[16px] font-bold hover:underline" href="#">Products</a>
           <a className="text-black text-[16px] font-bold hover:underline" href="#">Contact</a>
@@ -205,7 +205,7 @@ export default function Homepage() {
             <a href='#'>
               <img className="w-[24px]" src="/images-home/face_log.png" alt="Facebook" />
             </a>
-            <a href='https://x.com/InventoryPr0'>
+            <a href='#'>
               <img className="w-[24px]" src="/images-home/twi_log.png" alt="Twitter" />
             </a>
             <a href='#'>

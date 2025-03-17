@@ -2,9 +2,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginView from "./views/LoginView";
 import RegisterView from "./views/RegisterView";
 import AuthLayout from "./layouts/AuthLayout";
+import Header from "./layouts/header"
 
 import Homepage from "./views/Homepage";
-import Header from "./views/nose"
+import Dash from "./views/nose"
 import ProtectedRoute from "./components/ProtectedRoute";
 import { AuthProvider } from "./components/AuthToken";
 
@@ -24,8 +25,11 @@ export default function Router() {
                     <Route path="/auth/login" element={<ProtectedRoute><LoginView /></ProtectedRoute>} />
                     <Route path="/auth/register" element={<ProtectedRoute><RegisterView /></ProtectedRoute>} />
 
+                    <Route element={<Header />}>
+                    <Route path="/dashboard" element={<Dash />} />
+                    </Route>
+
                     <Route path="/homepage" element={<Homepage />} />
-                    <Route path="/dashboard" element={<Header />} />
                 </Routes>
 
             </AuthProvider>
