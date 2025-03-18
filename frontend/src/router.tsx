@@ -2,12 +2,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LoginView from "./views/LoginView";
 import RegisterView from "./views/RegisterView";
 import AuthLayout from "./layouts/AuthLayout";
-import Header from "./layouts/header"
+import Menu from "./layouts/Menu"
 
 import Homepage from "./views/Homepage";
-import Dash from "./views/nose"
-import ProtectedRoute from "./components/ProtectedRoute";
-import { AuthProvider } from "./components/AuthToken";
+import Dash from "./views/Dashboard"
+import ProtectedRoute from "./components/ProtectedRoute";   //Protege rutas de nuevos tokens
+import { AuthProvider } from "./components/AuthToken";      // Marca las rutas que pueden tener los datos del usuario con token
+import Members from "./views/Memberships";
+import HeaderN from "./layouts/HeaderN";
 
 export default function Router() {
     return (
@@ -15,21 +17,25 @@ export default function Router() {
             <AuthProvider>
                 <Routes>
                     <Route element={<AuthLayout />}>
-                        <Route path="/auth/login" element={<LoginView />} />
-                        <Route path="/auth/register" element={<RegisterView />} />
+                        <Route path="/auth/login" element={<ProtectedRoute><LoginView /></ProtectedRoute>} />
+                        <Route path="/auth/register" element={<ProtectedRoute><RegisterView /></ProtectedRoute>} />
                     </Route>
                 </Routes>
 
                 <Routes>
-                    {/* Si existe un token de sesion se redirije a la dashboard mediante el ProtectedRoute.tsx */}
-                    <Route path="/auth/login" element={<ProtectedRoute><LoginView /></ProtectedRoute>} />
-                    <Route path="/auth/register" element={<ProtectedRoute><RegisterView /></ProtectedRoute>} />
-
-                    <Route element={<Header />}>
-                    <Route path="/dashboard" element={<Dash />} />
+                    
+                    <Route element={<Menu />}>
+                        <Route path="/dashboard" element={<Dash />} />
                     </Route>
 
-                    <Route path="/homepage" element={<Homepage />} />
+                    {/* Header Inicial */}
+                    <Route element={<HeaderN />}>
+                        <Route path="/homepage" element={<Homepage />} />
+                        <Route path="/memberships" element={<Members />} />
+                    </Route>
+
+                    
+                    
                 </Routes>
 
             </AuthProvider>

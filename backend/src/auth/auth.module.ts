@@ -12,12 +12,12 @@ import { JwtStrategy } from './jwt.strategy';
     TypeOrmModule.forFeature([User]),
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
-      secret: 'secreto_super_xddd', // Usa variables de entorno en producción
+      secret: 'secreto_super_xddd', 
       signOptions: { expiresIn: '1hr' }, // Expira en 1 hora
     }),
   ],
   controllers: [AuthController],
   providers: [AuthService, JwtStrategy],
-  exports: [TypeOrmModule], // Exporta para usar en otros módulos si es necesario
+  exports: [TypeOrmModule], 
 })
 export class AuthModule {}

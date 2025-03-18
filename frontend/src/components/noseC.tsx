@@ -1,11 +1,12 @@
 import { useAuth } from "./AuthToken";
 
-const Dashboard = () => {
+const Dashboardd = () => {
   const { user} = useAuth();
 
   return (
-    <div>
-      <h1>Bienvenido, {user?.username} !</h1>
+    <div className="pl-5">
+      <h1>--- Datos del usuario iniciado: ---</h1>
+      <h1>Username: {user?.username}</h1>
       <p>Email: {user?.email}</p>
       <p>Rol: {user?.role}</p>
       <p>ID: {user?.id}</p>
@@ -13,4 +14,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Dashboardd;

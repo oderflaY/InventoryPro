@@ -10,16 +10,16 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
-      isGlobal: true, // Permite que las variables de entorno estén disponibles en toda la app
+      isGlobal: true,
     }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       url: 'postgresql://inventorypro_user:KzgA4c2YnObjLMbNItCbbEI6v7FPJSLF@dpg-cva4iuqj1k6c739er7a0-a.oregon-postgres.render.com/inventorypro', // Carga la URL desde el .env
       entities: [User], 
-      synchronize: true, // Solo en desarrollo, en producción usa migrations
+      synchronize: true, // Solo en desarrollo
       autoLoadEntities: true,
       ssl: {
-        rejectUnauthorized: false, // Necesario para Render y Neon.tech 
+        rejectUnauthorized: false, // Necesario para Render
       },
     }),
     AuthModule,

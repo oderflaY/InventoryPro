@@ -1,5 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import Carrusel from '../components/carrusel'; // Asegúrate de que la ruta sea correcta
+import { IoCheckmark, IoCloseSharp } from 'react-icons/io5';
+
 
 export default function Homepage() {
   // Si existe un token de sesion se redirije a la dashboard
@@ -8,41 +10,17 @@ export default function Homepage() {
   if (token) {
     return <Navigate to="/dashboard" replace />;
   }
-  
+
   return (
     <>
-      {/* Header  */}
-      <header className="fixed top-0 left-0 w-full h-[60px] bg-white text-black flex items-center justify-between px-5 shadow-md z-[1000]">
-        <a href='/homepage'>
-          <img src="/images-home/logo_2.png" className="h-[7vmin] w-[28vmin] px-[0.9vmin]" alt="logo" />
-        </a>
-
-        <nav className="flex gap-5">
-          <a className="text-black text-[16px] font-bold hover:underline" href="/homepage">Home</a>
-          <a className="text-black text-[16px] font-bold hover:underline" href="#">Servicies</a>
-          <a className="text-black text-[16px] font-bold hover:underline" href="#">Products</a>
-          <a className="text-black text-[16px] font-bold hover:underline" href="#">Contact</a>
-        </nav>
-
-        <div className="flex gap-2">
-          <a href='/auth/login'>
-          <button className="bg-[#11214D] text-white border-none px-4 py-2 text-sm rounded-md hover:bg-white hover:text-[#11214D] hover:border hover:border-[#11214D]">Login</button>
-          </a>
-
-          <a href='/auth/register'>
-          <button className="bg-[#11214D] text-white border-none px-4 py-2 text-sm rounded-md hover:bg-white hover:text-[#11214D] hover:border hover:border-[#11214D]">Sign Up</button>
-          </a>
-        </div>
-
-        <hr></hr>
-      </header>
-
       {/* Section I */}
       <section className="pt-20 flex justify-between items-center px-[75px] pr-[200px] bg-gray-100 ">
         <div className="max-w-1/2 space-y-2">
           <h1 className="text-[40px] font-bold">Inventory management <br></br> Now Simplified <br></br> <span className="text-blue-700">For Everyone</span></h1>
           <p>With InventoryPRO it is very easy to manage your inventory</p>
-          <button className="bg-[#11214D] text-white border-none px-4 py-2 text-sm rounded-md hover:bg-white hover:text-[#11214D] hover:border hover:border-[#11214D]">Learn More</button>
+          <button className="bg-[#11214D] text-white border-2 border-transparent px-4 py-2 text-sm rounded-md hover:bg-white hover:text-[#11214D] hover:border hover:border-[#11214D]">
+            Learn More
+          </button>
         </div>
         <div>
           <img className="w-[400px] h-auto" src="/images-home/sect_I.png" alt="Hero Image" />
@@ -77,44 +55,95 @@ export default function Homepage() {
         <p className="font-bold">Annual Save 20% per month</p>
         <div className="flex justify-center gap-5 pt-5">
           <div className="bg-white p-5 rounded-lg shadow-md w-[400px] ">
-            <div className='text-white bg-blue-900 h-[110px] leading-[1.8] text-left pl-[30px] rounded-lg space-y-0.5'>
-              <h3>FREE</h3>
+            <div className='text-white bg-blue-900 h-[130px] leading-[1.8] text-left pl-[30px] rounded-lg space-y-0.5'>
+              <h3 className='pt-3' >FREE</h3>
               <p>$0 / month</p>
-              <button className='bg-white text-blue-700 border-none px-4 py-2 text-[15px] rounded-full w-[180px] hover:bg-[#11214D] hover:text-white'>Choose this plan</button>
+              <a href='/memberships'>
+                <button className='font-bold bg-white text-blue-700 border-none px-4 py-2 text-[15px] rounded-full w-[180px] hover:bg-[#11214D] hover:text-white'>Choose this plan</button>
+              </a>
             </div>
-            <ul className="list-none p-0 text-left m-5">
-              <li className="relative pl-6 my-2 before:content-['✔'] before:absolute before:left-0 before:text-[#11214D] before:font-bold">10GB storage</li>
-              <li className="relative pl-6 my-2 before:content-['✔'] before:absolute before:left-0 before:text-[#11214D] before:font-bold">Basic integrations</li>
-              <li className="relative pl-6 my-2 before:content-['✔'] before:absolute before:left-0 before:text-[#11214D] before:font-bold">Standard Encryption</li>
-              <li className="relative pl-6 my-2 before:content-['✔'] before:absolute before:left-0 before:text-[#11214D] before:font-bold">Email Support</li>
+            <ul className="mt-4 space-y-2 text-white">
+              <div className="flex items-center pl-10 space-x-4">
+                <IoCheckmark className="text-green-500 w-6 h-6" />
+                <li className='text-black'>10GB storage</li>
+              </div>
+
+              <div className="flex items-center pl-10 space-x-4">
+                <IoCheckmark className="text-green-500 w-6 h-6" />
+                <li className='text-black'>Basic integrations</li>
+              </div>
+
+              <div className="flex items-center pl-10 space-x-4">
+                <IoCloseSharp className="text-red-500 w-6 h-6" />
+                <li className='text-black'>Standard Encryption</li>
+              </div>
+
+              <div className="flex items-center pl-10 space-x-4">
+                <IoCloseSharp className="text-red-500 w-6 h-6" />
+                <li className='text-black'>Email Support</li>
+              </div>
             </ul>
           </div>
 
           <div className="bg-white p-5 rounded-lg shadow-md w-[400px]">
-            <div className='text-white bg-blue-900 h-[110px] leading-[1.8] text-left pl-[30px] rounded-lg space-y-0.5'>
-              <h3>Premium</h3>
+            <div className='text-white bg-blue-900 h-[130px] leading-[1.8] text-left pl-[30px] rounded-lg space-y-0.5'>
+              <h3 className='pt-3'>Premium</h3>
               <p>$99 / month</p>
-              <button className='bg-white text-blue-700 border-none px-4 py-2 text-[15px] rounded-full w-[180px] hover:bg-[#11214D] hover:text-white'>Choose this plan</button>
+              <a href='/memberships'>
+                <button className='font-bold bg-white text-blue-700 border-none px-4 py-2 text-[15px] rounded-full w-[180px] hover:bg-[#11214D] hover:text-white'>Choose this plan</button>
+              </a>
             </div>
-            <ul className="list-none p-0 text-left m-5">
-              <li className="relative pl-6 my-2 before:content-['✔'] before:absolute before:left-0 before:text-[#11214D] before:font-bold">10GB storage</li>
-              <li className="relative pl-6 my-2 before:content-['✔'] before:absolute before:left-0 before:text-[#11214D] before:font-bold">Basic integrations</li>
-              <li className="relative pl-6 my-2 before:content-['✔'] before:absolute before:left-0 before:text-[#11214D] before:font-bold">Standard Encryption</li>
-              <li className="relative pl-6 my-2 before:content-['✔'] before:absolute before:left-0 before:text-[#11214D] before:font-bold">Email Support</li>
+            <ul className="mt-4 space-y-2 text-white">
+              <div className="flex items-center pl-10 space-x-4">
+                <IoCheckmark className="text-green-500 w-6 h-6" />
+                <li className='text-black'>10GB storage</li>
+              </div>
+
+              <div className="flex items-center pl-10 space-x-4">
+                <IoCheckmark className="text-green-500 w-6 h-6" />
+                <li className='text-black'>Basic integrations</li>
+              </div>
+
+              <div className="flex items-center pl-10 space-x-4">
+                <IoCheckmark className="text-green-500 w-6 h-6" />
+                <li className='text-black'>Standard Encryption</li>
+              </div>
+
+              <div className="flex items-center pl-10 space-x-4">
+                <IoCloseSharp className="text-red-500 w-6 h-6" />
+                <li className='text-black'>Email Support</li>
+              </div>
             </ul>
           </div>
 
           <div className="bg-white p-5 rounded-lg shadow-md w-[400px]">
-            <div className='text-white bg-blue-900 h-[110px] leading-[1.8] text-left pl-[30px] rounded-lg space-y-0.5'>
-              <h3>Business</h3>
+            <div className='text-white bg-blue-900 h-[130px] leading-[1.8] text-left pl-[30px] rounded-lg space-y-0.5'>
+              <h3 className='pt-3'>Business</h3>
               <p>$299 / month</p>
-              <button className='bg-white text-blue-700 border-none px-4 py-2 text-[15px] rounded-full w-[180px] hover:bg-[#11214D] hover:text-white'>Choose this plan</button>
+              <a href='/memberships'>
+                <button className=' font-bold bg-white text-blue-700 border-none px-4 py-2 text-[15px] rounded-full w-[180px] hover:bg-[#11214D] hover:text-white'>Choose this plan</button>
+              </a>
             </div>
-            <ul className="list-none p-0 text-left m-5">
-              <li className="relative pl-6 my-2 before:content-['✔'] before:absolute before:left-0 before:text-[#11214D] before:font-bold">10GB storage</li>
-              <li className="relative pl-6 my-2 before:content-['✔'] before:absolute before:left-0 before:text-[#11214D] before:font-bold">Basic integrations</li>
-              <li className="relative pl-6 my-2 before:content-['✔'] before:absolute before:left-0 before:text-[#11214D] before:font-bold">Standard Encryption</li>
-              <li className="relative pl-6 my-2 before:content-['✔'] before:absolute before:left-0 before:text-[#11214D] before:font-bold">Email Support</li>
+            <ul className="mt-4 space-y-2 text-white">
+              <div className="flex items-center pl-10 space-x-4">
+                <IoCheckmark className="text-green-500 w-6 h-6" />
+                <li className='text-black'>10GB storage</li>
+              </div>
+
+              <div className="flex items-center pl-10 space-x-4">
+                <IoCheckmark className="text-green-500 w-6 h-6" />
+                <li className='text-black'>Basic integrations</li>
+              </div>
+
+              <div className="flex items-center pl-10 space-x-4">
+                <IoCheckmark className="text-green-500 w-6 h-6" />
+                <li className='text-black'>Standard Encryption</li>
+              </div>
+
+              <div className="flex items-center pl-10 space-x-4">
+                <IoCheckmark className="text-green-500 w-6 h-6" />
+                <li className='text-black'>Email Support</li>
+              </div>
             </ul>
           </div>
         </div>
@@ -173,7 +202,7 @@ export default function Homepage() {
         </div>
         <div className="flex gap-10">
           <div>
-            <h3 className="mb-2">Solutions</h3>
+            <h3 className="mb-2 font-bold">Solutions</h3>
             <ul className="list-none p-0">
               <li><a className="text-gray-700 no-underline" href="#">Small Business</a></li>
               <li><a className="text-gray-700 no-underline" href="#">Freelancers</a></li>
@@ -182,7 +211,7 @@ export default function Homepage() {
             </ul>
           </div>
           <div>
-            <h3 className="mb-2">Company</h3>
+            <h3 className="mb-2 font-bold">Company</h3>
             <ul className="list-none p-0">
               <li><a className="text-gray-700 no-underline" href="#">About Us</a></li>
               <li><a className="text-gray-700 no-underline" href="#">Career</a></li>
@@ -190,7 +219,7 @@ export default function Homepage() {
             </ul>
           </div>
           <div>
-            <h3 className="mb-2">Learn</h3>
+            <h3 className="mb-2 font-bold">Learn</h3>
             <ul className="list-none p-0">
               <li><a className="text-gray-700 no-underline" href="#">Blog</a></li>
               <li><a className="text-gray-700 no-underline" href="#">EBooks</a></li>
