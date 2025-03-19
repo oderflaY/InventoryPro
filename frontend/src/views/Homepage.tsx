@@ -54,95 +54,112 @@ export default function Homepage() {
         <h2 className="font-bold">Prices, simple and suited for all your needs</h2>
         <p className="font-bold">Annual Save 20% per month</p>
         <div className="flex justify-center gap-5 pt-5">
+          {/* Free */}
           <div className="bg-white p-5 rounded-lg shadow-md w-[400px] ">
-            <div className='text-white bg-blue-900 h-[130px] leading-[1.8] text-left pl-[30px] rounded-lg space-y-0.5'>
-              <h3 className='pt-3' >FREE</h3>
-              <p>$0 / month</p>
-              <a href='/memberships'>
-                <button className='font-bold bg-white text-blue-700 border-none px-4 py-2 text-[15px] rounded-full w-[180px] hover:bg-[#11214D] hover:text-white'>Choose this plan</button>
-              </a>
+            <div className='text-white bg-gradient-to-b from-[#1E3A8A] to-[#11214D] h-[140px] leading-[1.8] text-left pl-[30px] rounded-lg space-y-0.5'>
+              <h3 className="pl-2 pt-3 font-semibold ">Free</h3>
+              <div className="flex">
+                <p className="text-2xl pl-2">$0</p>
+                <p className="text-1xl pt-1 pl-2 font-light italic">Month</p>
+              </div>
+              <div className='pt-1 pl-10'>
+                <a href='/memberships'>
+                  <button className='font-bold bg-white text-blue-700 border-1 border-transparent px-4 py-2 text-[15px] rounded-full w-[220px] hover:bg-[#11214D] hover:text-white hover:border-2 hover:border-white'>Choose this plan</button>
+                </a>
+              </div>
+
             </div>
             <ul className="mt-4 space-y-2 text-white">
               <div className="flex items-center pl-10 space-x-4">
                 <IoCheckmark className="text-green-500 w-6 h-6" />
-                <li className='text-black'>10GB storage</li>
+                <li className='text-blue-900'>10GB storage</li>
               </div>
 
               <div className="flex items-center pl-10 space-x-4">
                 <IoCheckmark className="text-green-500 w-6 h-6" />
-                <li className='text-black'>Basic integrations</li>
+                <li className='text-blue-900'>Basic integrations</li>
               </div>
 
               <div className="flex items-center pl-10 space-x-4">
                 <IoCloseSharp className="text-red-500 w-6 h-6" />
-                <li className='text-black'>Standard Encryption</li>
+                <li className='text-blue-900'>Standard Encryption</li>
               </div>
 
               <div className="flex items-center pl-10 space-x-4">
                 <IoCloseSharp className="text-red-500 w-6 h-6" />
-                <li className='text-black'>Email Support</li>
+                <li className='text-blue-900'>Email Support</li>
               </div>
             </ul>
           </div>
-
+          {/* Premium */}
           <div className="bg-white p-5 rounded-lg shadow-md w-[400px]">
-            <div className='text-white bg-blue-900 h-[130px] leading-[1.8] text-left pl-[30px] rounded-lg space-y-0.5'>
-              <h3 className='pt-3'>Premium</h3>
-              <p>$99 / month</p>
-              <a href='/memberships'>
-                <button className='font-bold bg-white text-blue-700 border-none px-4 py-2 text-[15px] rounded-full w-[180px] hover:bg-[#11214D] hover:text-white'>Choose this plan</button>
-              </a>
+            <div className='text-white bg-gradient-to-b from-[#1E3A8A] to-[#11214D] h-[140px] leading-[1.8] text-left pl-[30px] rounded-lg space-y-0.5'>
+            <h3 className="pl-2 pt-3 font-semibold ">Premium</h3>
+              <div className="flex">
+                <p className="text-2xl pl-2">$80</p>
+                <p className="text-1xl pt-1 pl-2 font-light italic">Month</p>
+              </div>
+              <div className='pt-1 pl-10'>
+                <a href='/memberships'>
+                  <button className='font-bold bg-white text-blue-700 border-1 border-transparent px-4 py-2 text-[15px] rounded-full w-[220px] hover:bg-[#11214D] hover:text-white hover:border-2 hover:border-white'>Choose this plan</button>
+                </a>
+              </div>
             </div>
             <ul className="mt-4 space-y-2 text-white">
               <div className="flex items-center pl-10 space-x-4">
                 <IoCheckmark className="text-green-500 w-6 h-6" />
-                <li className='text-black'>10GB storage</li>
+                <li className='text-blue-900'>10GB storage</li>
               </div>
 
               <div className="flex items-center pl-10 space-x-4">
                 <IoCheckmark className="text-green-500 w-6 h-6" />
-                <li className='text-black'>Basic integrations</li>
+                <li className='text-blue-900'>Basic integrations</li>
               </div>
 
               <div className="flex items-center pl-10 space-x-4">
                 <IoCheckmark className="text-green-500 w-6 h-6" />
-                <li className='text-black'>Standard Encryption</li>
+                <li className='text-blue-900'>Standard Encryption</li>
               </div>
 
               <div className="flex items-center pl-10 space-x-4">
                 <IoCloseSharp className="text-red-500 w-6 h-6" />
-                <li className='text-black'>Email Support</li>
+                <li className='text-blue-900'>Email Support</li>
               </div>
             </ul>
           </div>
-
+          {/* Business */}
           <div className="bg-white p-5 rounded-lg shadow-md w-[400px]">
-            <div className='text-white bg-blue-900 h-[130px] leading-[1.8] text-left pl-[30px] rounded-lg space-y-0.5'>
-              <h3 className='pt-3'>Business</h3>
-              <p>$299 / month</p>
-              <a href='/memberships'>
-                <button className=' font-bold bg-white text-blue-700 border-none px-4 py-2 text-[15px] rounded-full w-[180px] hover:bg-[#11214D] hover:text-white'>Choose this plan</button>
-              </a>
+            <div className='text-white bg-gradient-to-b from-[#1E3A8A] to-[#11214D] h-[140px] leading-[1.8] text-left pl-[30px] rounded-lg space-y-0.5'>
+            <h3 className="pl-2 pt-3 font-semibold ">Business</h3>
+              <div className="flex">
+                <p className="text-2xl pl-2">$240</p>
+                <p className="text-1xl pt-1 pl-2 font-light italic">Month</p>
+              </div>
+              <div className='pt-1 pl-10'>
+                <a href='/memberships'>
+                  <button className='font-bold bg-white text-blue-700 border-1 border-transparent px-4 py-2 text-[15px] rounded-full w-[220px] hover:bg-[#11214D] hover:text-white hover:border-2 hover:border-white'>Choose this plan</button>
+                </a>
+              </div>
             </div>
             <ul className="mt-4 space-y-2 text-white">
               <div className="flex items-center pl-10 space-x-4">
                 <IoCheckmark className="text-green-500 w-6 h-6" />
-                <li className='text-black'>10GB storage</li>
+                <li className='text-blue-900'>10GB storage</li>
               </div>
 
               <div className="flex items-center pl-10 space-x-4">
                 <IoCheckmark className="text-green-500 w-6 h-6" />
-                <li className='text-black'>Basic integrations</li>
+                <li className='text-blue-900'>Basic integrations</li>
               </div>
 
               <div className="flex items-center pl-10 space-x-4">
                 <IoCheckmark className="text-green-500 w-6 h-6" />
-                <li className='text-black'>Standard Encryption</li>
+                <li className='text-blue-900'>Standard Encryption</li>
               </div>
 
               <div className="flex items-center pl-10 space-x-4">
                 <IoCheckmark className="text-green-500 w-6 h-6" />
-                <li className='text-black'>Email Support</li>
+                <li className='text-blue-900'>Email Support</li>
               </div>
             </ul>
           </div>
