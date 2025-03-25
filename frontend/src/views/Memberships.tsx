@@ -147,17 +147,17 @@ export default function Memberships() {
               <ul className="mt-4 space-y-2 text-white">
                 <div className="flex items-center pl-10 space-x-4">
                   <IoCheckmark className="text-green-500 w-6 h-6" />
-                  <li className='text-black'>10GB storage</li>
+                  <li className='text-blue-900'>10GB storage</li>
                 </div>
 
                 <div className="flex items-center pl-10 space-x-4">
                   <IoCheckmark className="text-green-500 w-6 h-6" />
-                  <li className='text-black'>Basic integrations</li>
+                  <li className='text-blue-900'>Basic integrations</li>
                 </div>
 
                 <div className="flex items-center pl-10 space-x-4">
                   <IoCheckmark className="text-green-500 w-6 h-6" />
-                  <li className='text-black'>Standard Encryption</li>
+                  <li className='text-blue-900'>Standard Encryption</li>
                 </div>
 
                 <div className="flex items-center pl-10 space-x-4">

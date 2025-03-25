@@ -11,4 +11,5 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps) => {
   return token ? <Navigate to="/dashboard" replace /> : children;   // Solo puede entrar usuarios que no esten logeados
 };
 
+
 export default ProtectedRoute;

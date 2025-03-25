@@ -5,7 +5,7 @@ import { auth, facebookProvider, googleProvider, signInWithPopup } from "../fire
 import { Eye, EyeOff } from "lucide-react";
 
 
-function LoginForm() {
+function LoginForm() { 
     const CharactersNoUser = [" ", ".", ",", ";", ":", "'", "\"", "`", "~",
         "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "-", "+", "=", "{", "}", "[", "]", "|", "\\", "/", "?", "<", ">",
         "ñ", "Ñ", "á", "é", "í", "ó", "ú", "ü", "¡", "¿", "/", "*", ".", "Enter"]; // Caracteres prohibidos

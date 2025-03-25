@@ -1,25 +1,24 @@
-import { MaxLength, MinLength } from "class-validator";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Inventory } from "src/inventories/entities/inventory.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({ name: 'Users'})
+@Entity({ name: 'Users'}) 
 export class User {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
     @Column({ unique: true, length: 20})
-    @MinLength(3) // Mínimo 3 caracteres en validación
-    @MaxLength(50) // Máximo 50 caracteres en validación
     username: string;
     
     @Column({ unique: true, length: 20})
-    @MinLength(5)
-    @MaxLength(100)
     email: string;
     
     @Column({ type: 'text'})
-    @MinLength(8)
-    password: string;
+    password: string; 
 
     @Column({ default: 'Free'}) 
     role: string;
+
+    // Un usuario puede tener muchos inventarios
+    @OneToMany(() => Inventory, (inventory) => inventory.user)
+    inventories: Inventory[];
 }

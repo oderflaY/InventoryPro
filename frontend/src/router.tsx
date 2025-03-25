@@ -11,10 +11,15 @@ import { AuthProvider } from "./components/AuthToken";      // Marca las rutas q
 import Members from "./views/Memberships";
 import HeaderN from "./layouts/HeaderN";
 
+import Inventories from "./views/Inventories";
+import Products from "./views/Products";
+import InventoriesA from "./views/InventoriesA";
+
 export default function Router() {
     return (
         <BrowserRouter>
             <AuthProvider>
+
                 <Routes>
                     <Route element={<AuthLayout />}>
                         <Route path="/auth/login" element={<ProtectedRoute><LoginView /></ProtectedRoute>} />
@@ -23,19 +28,18 @@ export default function Router() {
                 </Routes>
 
                 <Routes>
-                    
                     <Route element={<Menu />}>
                         <Route path="/dashboard" element={<Dash />} />
+                        <Route path="/inventories" element={<Inventories />} />
+                        <Route path="/add_product" element={<Products />} />
+                        <Route path="/add_inventory" element={<InventoriesA />} />
                     </Route>
 
                     {/* Header Inicial */}
                     <Route element={<HeaderN />}>
-                        <Route path="/homepage" element={<Homepage />} />
+                        <Route path="/" element={<Homepage />} />
                         <Route path="/memberships" element={<Members />} />
                     </Route>
-
-                    
-                    
                 </Routes>
 
             </AuthProvider>

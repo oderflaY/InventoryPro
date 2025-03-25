@@ -7,13 +7,13 @@ import { User } from './entities/user.entity';
 import { PassportModule } from '@nestjs/passport';
 import { JwtStrategy } from './jwt.strategy';
 
-@Module({
+@Module({ 
   imports: [
     TypeOrmModule.forFeature([User]),
     PassportModule.register({ defaultStrategy: 'jwt' }),
     JwtModule.register({
       secret: 'secreto_super_xddd', 
-      signOptions: { expiresIn: '1hr' }, // Expira en 1 hora
+      signOptions: { expiresIn: '10hr' }, // Expira en 1 hora
     }),
   ],
   controllers: [AuthController],

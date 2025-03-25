@@ -10,12 +10,12 @@ export default function HeaderN() {
                 
                 {/* Si no hay token muestra todo normal*/}
                 {!token &&
-                <a href='/homepage'>
+                <a href='/'>
                     <img src="/images-home/logo_2.png" className="h-[7vmin] w-[28vmin] px-[0.9vmin]" alt="logo" />
                 </a> }
                 {!token &&
                 <nav className="flex-1 flex justify-center space-x-8">
-                    <a className="text-black text-[16px] font-bold hover:underline" href="/homepage">Home</a>
+                    <a className="text-black text-[16px] font-bold hover:underline" href="/">Home</a>
                     <a className="text-black text-[16px] font-bold hover:underline" href="#">Servicies</a>
                     <a className="text-black text-[16px] font-bold hover:underline" href="#">Products</a>
                     <a className="text-black text-[16px] font-bold hover:underline" href="#">Contact</a>
@@ -45,7 +45,7 @@ export default function HeaderN() {
                 <div className="flex gap-2">
                     <button onClick={() => {
                     localStorage.removeItem("token"); // Cerrar sesión
-                    window.location.href = "/homepage"; // Redirigir al login
+                    window.location.href = "/"; // Redirigir al login
                   }} className="bg-[#11214D] text-white border-2 border-transparent px-4 py-2 text-sm rounded-md hover:bg-white hover:text-[#11214D] hover:border hover:border-[#11214D]">
                         Log out
                     </button>

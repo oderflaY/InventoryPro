@@ -107,8 +107,6 @@ function RegisterForm() {
                     {errors.password && <p className="text-red-500 text-sm font-bold">⚠️ {errors.password}</p>}
                 </div>
 
-
-
                 {errors.general && <p className="text-red-500 text-sm text-center mb-3 font-bold">⚠️ {errors.general}</p>}
 
                 <div className="text-center">

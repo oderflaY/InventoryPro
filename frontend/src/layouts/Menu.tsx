@@ -24,12 +24,12 @@ export default function Menu() {
         style={{ width: '250px' }}
       >
         {/* Secciones del menu */}
-        <div className="space-y-4 p-4 pt-22 mb-4">
+        <div className="space-y-1 p-4 pt-25 mb-3">
               <div className="flex items-center space-x-1">
                 <BarChart />
                 <span className="font-semibold">Statistics</span>
               </div>
-              <ul className="pl-6 text-sm leading-6">
+              <ul className="pl-7 text-sm leading-6.5">
                 <a href="#">
                 <li className="">Latest sales</li>
                 </a>
@@ -49,12 +49,12 @@ export default function Menu() {
               </ul>
             </div>
             
-            <div className="space-y-4 p-4  mb-4">
+            <div className="space-y-1 pl-4 mb-3">
               <div className="flex items-center space-x-1">
                 <DollarSign />
                 <span className="font-semibold">Sales</span>
               </div>
-              <ul className="pl-6 text-sm leading-6">
+              <ul className="pl-7 text-sm leading-6.5">
                 <a href="#">
                 <li className="">Gross sales</li>
                 </a>
@@ -74,13 +74,13 @@ export default function Menu() {
               </ul>
             </div>
 
-            <div className="space-y-4 p-4  mb-4">
+            <div className="space-y-0.5 p-4">
               <div className="flex items-center space-x-1">
                 <Box />
                 <span className="font-semibold">Inventories</span>
               </div>
-              <ul className="pl-6 text-sm leading-6">
-                <a href="#">
+              <ul className="pl-7 text-sm leading-6.5">
+                <a href="/inventories">
                 <li>My Inventories</li>
                 </a>
 
@@ -119,7 +119,9 @@ export default function Menu() {
             >
               {menuOpen ? <FaTimes /> : <FaBars />}
             </button>
+            <a href="/dashboard">
             <img src="/images-home/logo_2.png" className="h-[6vmin] w-[26vmin] px-[0.9vmin]" alt="logo" />
+            </a>
           </div>
 
           {/* Search Bar */}
@@ -150,7 +152,7 @@ export default function Menu() {
 
               {/* Profile Menu */}
               {OpUsOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg  pt-2 text-sm ">
+                <div className="z-50 absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg  pt-2 text-sm ">
                   <a href="#" className="block px-4 py-2 hover:bg-gray-100 hover:font-bold hover:rounded-lg">Profile</a>
 
                   <a href="#" className="block px-4 py-2 hover:bg-gray-100 hover:font-bold hover:rounded-lg">Settings</a>
@@ -161,7 +163,7 @@ export default function Menu() {
 
                   <a onClick={() => { 
                     localStorage.removeItem("token"); // Cerrar sesión
-                    window.location.href = "/homepage"; // Redirigir al login
+                    window.location.href = "/"; // Redirigir al login
                   }} className="block px-4 py-2 text-red-500 hover:bg-red-500 hover:text-white hover:font-bold hover:rounded-lg ">
                     Logout
                   </a>
@@ -170,7 +172,7 @@ export default function Menu() {
             </div>
           </div>
         </header>
-        <div className={`flex-grow transition-all duration-300 ${menuOpen ? 'ml-[250px]' : 'ml-0'}`}
+        <div className={` flex-grow transition-all duration-300 ${menuOpen ? 'ml-[250px]' : 'ml-0'}`}
       >
           <Outlet />
         </div>
