@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import Dashboardd from "../components/noseC";
+import Dashboardd from "../components/NoseC";
 
 export default function Dashboard() {
   const token = localStorage.getItem("token");

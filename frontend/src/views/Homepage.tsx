@@ -1,6 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import Carrusel from '../components/carrusel'; // Asegúrate de que la ruta sea correcta
 import { IoCheckmark, IoCloseSharp } from 'react-icons/io5';
+import StorageEditModal from '../components/StorageEditModal';
 
 
 export default function Homepage() {
@@ -25,6 +26,7 @@ export default function Homepage() {
         <div>
           <img className="w-[400px] h-auto" src="/images-home/sect_I.png" alt="Hero Image" />
         </div>
+        <StorageEditModal></StorageEditModal>
       </section>
 
       {/* Section II */}
