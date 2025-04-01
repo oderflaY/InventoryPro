@@ -1,57 +1,63 @@
-import { List, Tag } from "lucide-react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { HiOutlinePencilAlt } from "react-icons/hi";
+
+import { useEffect, useState } from "react";
+import { getUserInventories } from "../api/inventories";
+import { Inventory } from "../interface/inventory.interface";
+import { useAuth } from "../components/AuthToken";
 
 export default function Inventories() {
-    const token = localStorage.getItem("token");
+    const navigate = useNavigate();
+    const [inventories, setInventories] = useState<Inventory[]>([]);
 
-    if (!token) {
-        return <Navigate to="/auth/login" replace />;
-    }
+    // Obtener los datos del usuario del localStorage
+    const { user } = useAuth();
+
+    useEffect(() => {
+        if (user && user.id) {
+            getUserInventories(user.id)
+                .then((data) => {
+                    setInventories(data);
+                })
+                .catch(console.error)
+        }
+    }, [user]);
+
     return (
         <>
             <div className="relative h-15">
                 <a href="/add_inventory">
-                <button className="absolute top-0 right-0 m-2 mx-5 bg-[#11214D] text-white border-2 border-transparent px-4 py-2 font-medium text-sm rounded-md hover:bg-white hover:text-[#11214D] hover:border hover:border-[#11214D] hover:font-medium">
-                    Add New Inventary
-                </button>
+                    <button className="absolute top-0 right-0 m-2 mx-5 my-3 bg-[#11214D] text-white border-2 border-transparent px-4 py-2 font-medium text-sm rounded-md hover:bg-white hover:text-[#11214D] hover:border hover:border-[#11214D] hover:font-medium">
+                        Add New Inventary
+                    </button>
                 </a>
             </div>
-            <div className="flex gap-8 pl-7 bg-gray-100 min-h-screen">
-                <div className="w-180 h-60 p-4 shadow-2xl rounded-lg bg-white">
-                    <div className="flex justify-between items-center border-b pb-2 mb-2">
-                        <h2 className="text-lg font-semibold">Inventory_Name</h2>
-                        <div className="flex gap-2 text-gray-500">
-                            <Tag className="w-5 h-5" />
-                            <List className="w-5 h-5" />
-                        </div>
-                    </div>
-                    <div>
-                        <p className="text-gray-600 text-1xl italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, totam? Facilis iure id possimus ipsum incidunt, molestiae necessitatibus ea ratione, impedit rerum aliquam in, vitae ad? Libero reprehenderit vero voluptates.</p>
-                    </div>
+            {inventories.length === 0 ? (
+                <div>
+                    <p className="text-center font-bold text-[#11214D]">You have no inventories created.</p>
                 </div>
+            ) : (
 
-                <div className="w-180 h-75 p-4 shadow-md rounded-lg bg-white">
-                    <div className="flex justify-between items-center border-b pb-2 mb-2">
-                        <h2 className="text-lg font-semibold">inventory</h2>
-                        <div className="flex gap-2 text-gray-500">
-                            <Tag className="w-5 h-5" />
-                            <List className="w-5 h-5" />
+                <div className="grid grid-cols-2 gap-x-5 gap-y-7 pl-4 pr-4">
+                    
+                    {inventories.map((inv, index) => (
+                        <div key={index} className="p-4 h-45 shadow-2xl rounded-lg bg-white">
+                            <div className="relative flex items-center justify-center border-b pb-2 mb-2">
+                                <h2 onClick={() => navigate(`/inventory/${inv.id}/products`)} className=" text-lg font-semibold">{inv.name}</h2>
+                                <a href="#">
+                                    <span className="absolute right-0">
+                                        <HiOutlinePencilAlt className="w-5 h-5 cursor-pointer text-black" />
+                                    </span>
+                                </a>
+                            </div>
+                            <div onClick={() => navigate(`/inventory/${inv.id}/products`)}>
+                                <p className="text-gray-600 text-1xl italic break-words whitespace-normal">{inv.description}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div>
-                        <p className="text-gray-600 text-sm">blabla</p>
-                    </div>
-                </div>
-                {/* 
-                <div className="justify-center items-center">
-                    <a href="/add_product">
-                        <button className='rounded-lg font-bold bg-[#11214D] text-white border-2 border-white px-4 py-2 text-[15px] w-[180px] hover:bg-white hover:text-[#11214D] hover:border-2 hover:border-[#11214D]'>
-                            Add Products
-                        </button>
-                    </a>
-                </div>*/}
-            </div>
+                    ))}
 
+                </div>
+            )}
         </>
     );
 }

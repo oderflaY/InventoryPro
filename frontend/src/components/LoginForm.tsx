@@ -51,9 +51,7 @@ function LoginForm() {
             const decodedUser = JSON.parse(atob(data.accessToken.split(".")[1]));
             setUser(decodedUser); // Actualiza el contexto
 
-            //alert("Inicio de sesión exitoso");
             window.location.href = '/dashboard';
-            //navigate("/dashboard");
         }
     };
 

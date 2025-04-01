@@ -1,30 +1,31 @@
 import { MaxLength, MinLength } from 'class-validator';
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Inventory } from 'src/inventories/entities/inventory.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany, ManyToOne } from 'typeorm';
 
 @Entity({ name: 'Products' })
 export class Product {
     @PrimaryGeneratedColumn('uuid')
-    id: number; 
+    id: number;
 
-    @Column() 
+    @Column()
     name: string;
 
     @Column()
-    serial_number: string;
+    serialnumber: string;
 
     @Column()
     category: string;
 
-    @Column() 
-    regular_price: string;
+    @Column()
+    regularprice: string;
 
     @Column()
-    sale_price: string;
+    saleprice: string;
 
     @Column()
     stock: string;
 
-    @Column({default: 'Available'})
+    @Column({ default: 'Available' })
     status: string;
 
     @Column('text')
@@ -32,4 +33,7 @@ export class Product {
 
     @Column({ nullable: true })
     imageurl: string;
+
+    @ManyToOne(() => Inventory, (inventory) => inventory.products, { onDelete: 'CASCADE' })
+    inventory: Inventory;
 }

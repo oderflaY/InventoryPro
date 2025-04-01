@@ -1,4 +1,5 @@
 export interface Product {
+    id?: string
     name: string;
     serial: string;
     category: string;
@@ -8,4 +9,5 @@ export interface Product {
     status: string;
     description: string;
     imageurl?: string;
+    inventoryId: string;
 }

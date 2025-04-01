@@ -52,7 +52,7 @@ export class AuthService {
     if (!isPasswordValid) throw new UnauthorizedException('Incorrect Password');
 
     // Generar token JWT
-    const payload = { id: user.id, username: user.username, email: user.email, role: user.role };
+    const payload = { id: user.id, username: user.username,email: user.email, role: user.role, firstname: user.firstname, lastname: user.lastname, phone: user.phone, country: user.country, city: user.city, postalcode: user.postalcode };
     const accessToken = this.jwtService.sign(payload);
     //console.log(accessToken)
     

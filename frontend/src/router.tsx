@@ -14,13 +14,14 @@ import HeaderN from "./layouts/HeaderN";
 import Inventories from "./views/Inventories";
 import Products from "./views/Products";
 import InventoriesA from "./views/InventoriesA";
+import ProductList from "./views/ProductsList";
 
 export default function Router() {
     return (
         <BrowserRouter>
             <AuthProvider>
 
-                <Routes>
+                <Routes> 
                     <Route element={<AuthLayout />}>
                         <Route path="/auth/login" element={<ProtectedRoute><LoginView /></ProtectedRoute>} />
                         <Route path="/auth/register" element={<ProtectedRoute><RegisterView /></ProtectedRoute>} />
@@ -31,8 +32,9 @@ export default function Router() {
                     <Route element={<Menu />}>
                         <Route path="/dashboard" element={<Dash />} />
                         <Route path="/inventories" element={<Inventories />} />
-                        <Route path="/add_product" element={<Products />} />
                         <Route path="/add_inventory" element={<InventoriesA />} />
+                        <Route path="/inventory/:inventoryId/products" element={<ProductList />} />
+                        <Route path="/inventory/:inventoryId/add-product" element={<Products />} />
                     </Route>
 
                     {/* Header Inicial */}

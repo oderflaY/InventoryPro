@@ -7,6 +7,12 @@ interface User {
   username: string;
   email: string;
   role: string;
+  firstname: string;
+  lastname: string;
+  phone: string;
+  country: string;
+  city: string;
+  postalcode: string;
 }
 
 // Tipo del contexto

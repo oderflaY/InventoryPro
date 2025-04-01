@@ -15,6 +15,24 @@ export class User {
     @Column({ type: 'text'})
     password: string; 
 
+    @Column({ default: ' ' })
+    firstname: string; 
+
+    @Column({ default: ' ' })
+    lastname: string; 
+
+    @Column({ default: '+' })
+    phone: string; 
+
+    @Column({ default: ' ' })
+    country: string; 
+
+    @Column({ default: ' ' })
+    city: string; 
+
+    @Column({ default: '#' })
+    postalcode: string; 
+
     @Column({ default: 'Free'}) 
     role: string;
 
