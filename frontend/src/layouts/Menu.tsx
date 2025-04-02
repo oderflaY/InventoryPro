@@ -1,10 +1,12 @@
 import { Outlet } from "react-router-dom";
-import { Search, Bell, MessageCircle, ChevronDown, DollarSign, Box, BarChart } from "lucide-react";
+import { Search, Bell, MessageCircle, ChevronDown, BarChart } from "lucide-react";
+import { FaBoxArchive } from "react-icons/fa6";
 import { useState } from "react";
 import { useAuth } from "../components/AuthToken";
 import { FaBars, FaRegUser, FaTimes } from "react-icons/fa";
 import { MdLogout, MdOutlineAdminPanelSettings } from "react-icons/md";
 import { IoSettingsOutline, IoSparklesOutline } from "react-icons/io5";
+import { HiOutlineCurrencyDollar } from "react-icons/hi";
 
 export default function Menu() {
   const [OpUsOpen, setopUsOpen] = useState(false);
@@ -65,7 +67,7 @@ export default function Menu() {
 
           <div className="pace-y-0.5 pt-2 pl-4 pb-2">
             <div className="flex items-center space-x-1">
-              <DollarSign />
+              <HiOutlineCurrencyDollar size={20}/>
               <span className="font-semibold">Sales</span>
             </div>
             <ul className="pl-7 text-xs leading-5">
@@ -90,7 +92,7 @@ export default function Menu() {
 
           <div className="pace-y-0.5 pt-2 pl-4 pb-2">
             <div className="flex items-center space-x-1">
-              <Box />
+              <FaBoxArchive  />
               <span className="font-semibold">Inventories</span>
             </div>
             <ul className="pl-7 text-xs leading-5">
@@ -111,15 +113,15 @@ export default function Menu() {
               <span className="font-semibold">Profile</span>
             </div>
             <ul className="pl-7 text-xs leading-5">
-              <a href="/inventories">
+              <a href="/my-profile">
                 <li>My Profile</li>
               </a>
 
-              <a href="#">
+              <a href="/my-profile">
                 <li>Personal Information</li>
               </a>
 
-              <a href="#">
+              <a href="/my-profile">
                 <li>Address</li>
               </a>
 
@@ -179,7 +181,7 @@ export default function Menu() {
 
         <header className="flex items-center justify-between bg-white shadow p-4 relative">
           {/* Logo */}
-          <div className="flex items-center space-x-2">   {/* Abrir / Cerrar Menu */}
+          <div className="flex items-center space-x-2">  
             <button
               onClick={toggleSidebar}
             >
@@ -196,14 +198,14 @@ export default function Menu() {
             <input
               type="text"
               placeholder="Type to search..."
-              className="w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="bg-gray-100 w-full pl-10 pr-4 py-2 border rounded-lg focus:outline-none focus:ring-1 focus:ring-[#11214D]"
             />
           </div>
 
           {/* Icons & Profile */}
           <div className="flex items-center space-x-4">
-            <Bell className="text-gray-500 hover:text-blue-500 cursor-pointer" size={20} />
-            <MessageCircle className="text-gray-500 hover:text-blue-500 cursor-pointer" size={20} />
+            <Bell className="text-gray-500 hover:text-[#11214D] cursor-pointer" size={20} />
+            <MessageCircle className="text-gray-500 hover:text-[#11214D] cursor-pointer" size={20} />
 
             {/* Profile */}
             <div className="relative">
