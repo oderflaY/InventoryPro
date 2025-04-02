@@ -3,9 +3,9 @@ import { useState } from 'react';
 const Carrusel = () => {
   const [index, setIndex] = useState(0);
   const images = [
-    "https://placehold.jp/1600x500.png",
-    "https://placehold.jp/1600x500.png",
-    "https://placehold.jp/1600x500.png"
+    "../../public/images-home/carrucel/1.png",
+    "../../public/images-home/carrucel/2.png",
+    "../../public/images-home/carrucel/3.png"
   ];
 
   const nextImage = () => {

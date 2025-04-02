@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom';
-import Carrusel from '../components/carrusel'; // Asegúrate de que la ruta sea correcta
+import Carrusel from '../components/Carrusel.tsx'; // Asegúrate de que la ruta sea correcta
 import { IoCheckmark, IoCloseSharp } from 'react-icons/io5';
 import StorageEditModal from '../components/StorageEditModal.tsx';
 
