@@ -12,7 +12,7 @@ const Dashboardd = () => {
       <p>ID: {user?.id}</p>
 <br></br>
       <h1 className="font-bold">--- Personal data of the initiated user: ---</h1>
-      <span className="font-light italic">(A editar porque se mandan vacios al registrarse)</span>
+      <span className="font-light italic">(A editar porque se mandan predeterminados al registrarse)</span>
       <h1>First Name: {user?.firstname}</h1>
       <p>Last Name: {user?.lastname}</p>
       <p>Bibliography: {user?.bibliography}</p>
@@ -22,6 +22,7 @@ const Dashboardd = () => {
       <p>Postal Code: {user?.postalcode}</p>
       <p>Image: {user?.image}</p>
     </div>
+    
   );
 };
 
