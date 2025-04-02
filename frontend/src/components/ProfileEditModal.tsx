@@ -1,49 +1,48 @@
 import React from "react";
 
-const AddressModal = () => {
+const EditProfileModal = () => {
+  const handleFileUpload = () => {
+    document.getElementById("file-upload").click();
+  };
+
   return (
     <div className="relative flex flex-col bg-[#101F4A] border border-slate-200 w-[20rem] rounded-xl p-3 my-4 shadow-lg">
-      <h3 className="text-white text-base font-bold mb-2">ADDRESS</h3>
+      <h3 className="text-white text-base font-bold mb-2">EDIT PROFILE</h3>
 
       <div className="flex flex-col gap-2">
-        {/* Country */}
+        {/* Name */}
         <div className="w-full">
-          <label className="block text-white text-xs mb-1">COUNTRY</label>
+          <label className="block text-white text-xs mb-1">NAME</label>
           <input
             type="text"
             className="w-full bg-white text-[#101F4A] text-sm border border-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-slate-500 shadow-sm"
-            placeholder="Input your country"
+            placeholder="Input name"
           />
         </div>
 
-        {/* Postal Code */}
+        {/* Occupation */}
         <div className="w-full">
-          <label className="block text-white text-xs mb-1">POSTAL CODE</label>
-          <input
-            type="number"
-            className="w-full bg-white text-[#101F4A] text-sm border border-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-slate-500 shadow-sm"
-            placeholder="Input your postal code"
-            required
-          />
-        </div>
-
-        {/* City */}
-        <div className="w-full">
-          <label className="block text-white text-xs mb-1">CITY</label>
+          <label className="block text-white text-xs mb-1">OCCUPATION</label>
           <input
             type="text"
             className="w-full bg-white text-[#101F4A] text-sm border border-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-slate-500 shadow-sm"
-            placeholder="Input your city"
+            placeholder="Input occupation"
           />
         </div>
 
-        {/* State */}
+        {/* Image */}
         <div className="w-full">
-          <label className="block text-white text-xs mb-1">STATE</label>
+          <label className="block text-white text-xs mb-1">IMAGE</label>
+          <button
+            onClick={handleFileUpload}
+            className="w-full bg-white text-[#101F4A] text-xs font-bold py-2 rounded-lg border border-slate-300 shadow-md transition duration-100 hover:bg-gray-200 text-left"
+          >
+            Choose File
+          </button>
           <input
-            type="text"
-            className="w-full bg-white text-[#101F4A] text-sm border border-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-slate-500 shadow-sm"
-            placeholder="Input your state"
+            id="file-upload"
+            type="file"
+            className="hidden"
           />
         </div>
       </div>
@@ -65,4 +64,4 @@ const AddressModal = () => {
   );
 };
 
-export default AddressModal;
+export default EditProfileModal;

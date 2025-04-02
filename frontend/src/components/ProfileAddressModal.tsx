@@ -20,10 +20,9 @@ const AddressModal = () => {
         <div className="w-full">
           <label className="block text-white text-xs mb-1">POSTAL CODE</label>
           <input
-            type="number"
+            type="text"
             className="w-full bg-white text-[#101F4A] text-sm border border-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-slate-500 shadow-sm"
             placeholder="Input your postal code"
-            required
           />
         </div>
 

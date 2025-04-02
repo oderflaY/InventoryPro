@@ -1,49 +1,60 @@
 import React from "react";
 
-const AddressModal = () => {
+const PersonalInformationModal = () => {
   return (
     <div className="relative flex flex-col bg-[#101F4A] border border-slate-200 w-[20rem] rounded-xl p-3 my-4 shadow-lg">
-      <h3 className="text-white text-base font-bold mb-2">ADDRESS</h3>
+      <h3 className="text-white text-base font-bold mb-2">PERSONAL INFORMATION</h3>
 
       <div className="flex flex-col gap-2">
-        {/* Country */}
+        {/* First Name */}
         <div className="w-full">
-          <label className="block text-white text-xs mb-1">COUNTRY</label>
+          <label className="block text-white text-xs mb-1">FIRST NAME</label>
           <input
             type="text"
             className="w-full bg-white text-[#101F4A] text-sm border border-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-slate-500 shadow-sm"
-            placeholder="Input your country"
+            placeholder="Input first name"
           />
         </div>
 
-        {/* Postal Code */}
+        {/* Last Name */}
         <div className="w-full">
-          <label className="block text-white text-xs mb-1">POSTAL CODE</label>
+          <label className="block text-white text-xs mb-1">LAST NAME</label>
           <input
-            type="number"
+            type="text"
             className="w-full bg-white text-[#101F4A] text-sm border border-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-slate-500 shadow-sm"
-            placeholder="Input your postal code"
+            placeholder="Input last name"
+          />
+        </div>
+
+        {/* Biography */}
+        <div className="w-full">
+          <label className="block text-white text-xs mb-1">BIOGRAPHY</label>
+          <textarea
+            className="w-full bg-white text-[#101F4A] text-sm border border-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-slate-500 shadow-sm"
+            placeholder="Input biography"
+          ></textarea>
+        </div>
+
+        {/* Email Address */}
+        <div className="w-full">
+          <label className="block text-white text-xs mb-1">E-MAIL ADDRESS</label>
+          <input
+            type="email"
+            className="w-full bg-white text-[#101F4A] text-sm border border-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-slate-500 shadow-sm"
+            placeholder="Input your e-mail address"
+            pattern=".+@.+"
+            title="Please enter a valid email address with an '@'."
             required
           />
         </div>
 
-        {/* City */}
+        {/* Phone */}
         <div className="w-full">
-          <label className="block text-white text-xs mb-1">CITY</label>
+          <label className="block text-white text-xs mb-1">PHONE</label>
           <input
-            type="text"
+            type="tel"
             className="w-full bg-white text-[#101F4A] text-sm border border-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-slate-500 shadow-sm"
-            placeholder="Input your city"
-          />
-        </div>
-
-        {/* State */}
-        <div className="w-full">
-          <label className="block text-white text-xs mb-1">STATE</label>
-          <input
-            type="text"
-            className="w-full bg-white text-[#101F4A] text-sm border border-slate-300 rounded-lg px-2 py-1 focus:outline-none focus:border-slate-500 shadow-sm"
-            placeholder="Input your state"
+            placeholder="Input phone number"
           />
         </div>
       </div>
@@ -65,4 +76,4 @@ const AddressModal = () => {
   );
 };
 
-export default AddressModal;
+export default PersonalInformationModal;
