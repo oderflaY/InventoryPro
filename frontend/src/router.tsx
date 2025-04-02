@@ -13,7 +13,7 @@ import HeaderN from "./layouts/HeaderN";
 
 import Inventories from "./views/Inventories";
 import Products from "./views/Products";
-import InventoriesA from "./views/InventoriesA";
+
 import ProductList from "./views/ProductsList";
 import Profile from "./views/Profile";
 
@@ -34,7 +34,6 @@ export default function Router() {
                         <Route path="/dashboard" element={<Dash />} />
                         <Route path="/my-profile" element={<Profile />} />
                         <Route path="/inventories" element={<Inventories />} />
-                        <Route path="/add_inventory" element={<InventoriesA />} />
                         <Route path="/inventory/:inventoryId/products" element={<ProductList />} />
                         <Route path="/inventory/:inventoryId/add-product" element={<Products />} />
                     </Route>

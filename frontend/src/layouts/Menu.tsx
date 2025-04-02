@@ -139,7 +139,7 @@ export default function Menu() {
           </div>
 
           <div className="space-y-0.5 pl-4 pt-2">
-          <a href="#">
+          <a href="/memberships">
             <div className="flex items-center space-x-1">
               <IoSparklesOutline   />
               <span className="font-semibold">Upgrade+</span>

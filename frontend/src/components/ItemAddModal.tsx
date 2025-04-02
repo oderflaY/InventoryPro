@@ -1,12 +1,11 @@
-import React from "react";
 
-const AddItemModal = () => {
+const AddItemModal = ({ onClose }: { onClose: () => void }) => {
   const handleFileUpload = () => {
     document.getElementById("file-upload").click();
   };
 
   return (
-    <div className="relative flex flex-col bg-[#101F4A] border border-slate-200 w-[20rem] rounded-xl p-3 my-4 shadow-lg">
+    <div className="z-50 absolute ml-2 p-4 shadow-lg  bg-[#101F4A] border border-slate-200 w-96 rounded-lg my-6 text-white">
       <h3 className="text-white text-base font-bold mb-2">ADD NEW ITEM</h3>
 
       <div className="flex flex-col gap-2">
@@ -124,7 +123,7 @@ const AddItemModal = () => {
       <div className="flex justify-between mt-4">
         <button
           className="w-[45%] bg-white text-[#101F4A] text-xs font-bold py-2 rounded-lg border border-slate-300 shadow-md transition duration-100 hover:bg-gray-200"
-        >
+          onClick={onClose}>
           CANCEL
         </button>
         <button
