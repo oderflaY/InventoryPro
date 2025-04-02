@@ -9,16 +9,18 @@ function RegisterForm() {
         "ñ", "Ñ", "á", "é", "í", "ó", "ú", "ü", "¡", "¿", "/", "*", ".", "Enter"]; // Caracteres prohibidos
     const CharactersNo = [" ", "Enter"]; // Caracteres prohibidos
 
-    const [user, setUser] = useState({   //definir variables
+    const [user, setUser] = useState({  
+        firstname: "",
+        lastname: "",
         username: "",
         email: "",
         password: "",
     });
 
-    const [errors, setErrors] = useState<{ username?: string; email?: string; password?: string; general?: string; }>({});
+    const [errors, setErrors] = useState<{ firstname?: string; lastname?: string; username?: string; email?: string; password?: string; general?: string; }>({});
     const navigate = useNavigate();
 
-    const [PasswChan, setPasswChan] = useState(false);  //  Cambiar password a text
+    const [PasswChan, setPasswChan] = useState(false); 
 
     //Guardar Datos
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -31,13 +33,16 @@ function RegisterForm() {
         setErrors({});
 
         const res = await createUserRequest(user)
-        const data = await res.json()   //Convertir de json a string
+        const data = await res.json()   
 
         if (!res.ok) {
             const newErrors: any = {};
             if (Array.isArray(data.message)) {
-                // Procesar errores de validación individuales
+                // Procesar errores individuales
+                console.log(newErrors)
                 data.message.forEach((msg: string) => {
+                    if (msg.toLowerCase().includes("firstname")) newErrors.firstname = msg;
+                    if (msg.toLowerCase().includes("lastname")) newErrors.lastname = msg;
                     if (msg.toLowerCase().includes("username")) newErrors.username = msg;
                     if (msg.toLowerCase().includes("email")) newErrors.email = msg;
                     if (msg.toLowerCase().includes("password")) newErrors.password = msg;
@@ -58,15 +63,43 @@ function RegisterForm() {
                 onSubmit={handleSubmit}
                 className="px-5 py-5 rounded-lg space-y-7">
 
+                <div className="grid grid-cols-2 gap-4">
+                    <div>
+                        <label className="block text-2xl text-slate-500">First Name</label>
+                        <input
+                            name="firstname"
+                            type="text"
+                            placeholder="First Name"
+                            className="bg-slate-100 border-none w-full p-3 rounded-lg placeholder-slate-400"
+                            onChange={handleChange}
+                            required
+                        />
+                        {errors.firstname && <p className="text-red-500 text-sm font-bold">⚠️ {errors.firstname}</p>}
+                    </div>
+                    <div>
+                        <label className="block text-2xl text-slate-500">Last Name</label>
+                        <input
+                            name="lastname"
+                            type="text"
+                            placeholder="Last Name"
+                            className="bg-slate-100 border-none w-full p-3 rounded-lg placeholder-slate-400"
+                            onChange={handleChange}
+                            required
+                        />
+                        {errors.lastname && <p className="text-red-500 text-sm font-bold">⚠️ {errors.lastname}</p>}
+                    </div>
+                </div>
+
                 <div className="grid grid-cols-1">
                     <label className="text-2xl text-slate-500">Username</label>
                     <input
                         name="username"
                         type="text"
                         placeholder="Username"
-                        className="bg-slate-100 border-none p-3 rounded-lg placeholder-slate-400"
+                        className="bg-slate-100 border-none w-full p-3 rounded-lg placeholder-slate-400"
                         onKeyDown={(e) => CharactersNoUser.includes(e.key) && e.preventDefault()}   //  Evitar que ingrese simbolos erroneos
                         onChange={handleChange}
+                        required
                     />
                     {errors.username && <p className="text-red-500 text-sm font-bold">⚠️ {errors.username}</p>}
                 </div>
@@ -77,9 +110,10 @@ function RegisterForm() {
                         name="email"
                         type="email"
                         placeholder="Mail"
-                        className="bg-slate-100 border-none p-3 rounded-lg w-96 placeholder-slate-400"
+                        className="bg-slate-100 border-none p-3 rounded-lg w-full placeholder-slate-400"
                         onKeyDown={(e) => CharactersNo.includes(e.key) && e.preventDefault()}   //  Evitar que ingrese simbolos erroneos
                         onChange={handleChange}
+                        required
                     />
                     {errors.email && <p className="text-red-500 text-sm font-bold">⚠️ {errors.email}</p>}
                 </div>
@@ -94,6 +128,7 @@ function RegisterForm() {
                             className="bg-slate-100 border-none p-3 w-full rounded-lg placeholder-slate-400"
                             onKeyDown={(e) => CharactersNo.includes(e.key) && e.preventDefault()}   //  Evitar que ingrese simbolos erroneos
                             onChange={handleChange}
+                            required
                         />
 
                         <button

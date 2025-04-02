@@ -15,10 +15,12 @@ const Dashboardd = () => {
       <span className="font-light italic">(A editar porque se mandan vacios al registrarse)</span>
       <h1>First Name: {user?.firstname}</h1>
       <p>Last Name: {user?.lastname}</p>
+      <p>Bibliography: {user?.bibliography}</p>
       <p>Phone: {user?.phone}</p>
       <h1>Country: {user?.country}</h1>
       <p>City: {user?.city}</p>
       <p>Postal Code: {user?.postalcode}</p>
+      <p>Image: {user?.image}</p>
     </div>
   );
 };

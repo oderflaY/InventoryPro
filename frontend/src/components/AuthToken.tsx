@@ -8,11 +8,13 @@ interface User {
   email: string;
   role: string;
   firstname: string;
+  bibliography: string;
   lastname: string;
   phone: string;
   country: string;
   city: string;
   postalcode: string;
+  image: string;
 }
 
 // Tipo del contexto

@@ -27,7 +27,7 @@ export default function Inventories() {
         <>
             <div className="relative h-15">
                 <a href="/add_inventory">
-                    <button className="absolute top-0 right-0 m-2 mx-5 my-3 bg-[#11214D] text-white border-2 border-transparent px-4 py-2 font-medium text-sm rounded-md hover:bg-white hover:text-[#11214D] hover:border hover:border-[#11214D] hover:font-medium">
+                    <button className="absolute top-0 right-0 m-2 mx-5 my-3 bg-[#11214D] text-white border-2 border-transparent px-4 py-2 font-medium text-sm rounded-md hover:bg-white hover:text-[#11214D] hover:border-2 hover:border-[#11214D] hover:font-medium">
                         Add New Inventary
                     </button>
                 </a>

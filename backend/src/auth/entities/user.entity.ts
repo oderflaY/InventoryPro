@@ -15,26 +15,32 @@ export class User {
     @Column({ type: 'text'})
     password: string; 
 
-    @Column({ default: ' ' })
+    @Column()
     firstname: string; 
 
-    @Column({ default: ' ' })
+    @Column()
     lastname: string; 
 
-    @Column({ default: '+' })
+    @Column({ default: 'Idk'}) 
+    bibliography: string
+
+    @Column({ default: 'No Phone' })
     phone: string; 
 
-    @Column({ default: ' ' })
+    @Column({ default: 'No Country' })
     country: string; 
 
-    @Column({ default: ' ' })
+    @Column({ default: 'No City' })
     city: string; 
 
-    @Column({ default: '#' })
+    @Column({ default: 'No Postal Code' })
     postalcode: string; 
 
     @Column({ default: 'Free'}) 
     role: string;
+
+    @Column({ default: 'No Image'}) 
+    image: string
 
     // Un usuario puede tener muchos inventarios
     @OneToMany(() => Inventory, (inventory) => inventory.user)

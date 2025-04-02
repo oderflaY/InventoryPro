@@ -14,23 +14,22 @@ export class AuthService {
     private jwtService: JwtService
   ) {}
 
-  //  REGISTRO DE USUARIO
   async register(createUserDto: CreateUserDto): Promise<{ message: string }> {
     const { username, email, password } = createUserDto;
 
-    // Verificar si el usuario o el email ya existen
+
     const userExists = await this.userRepository.findOne({ where: [{ username }, { email }] });
     if (userExists) {
       throw new BadRequestException('El usuario o correo ya están registrados.');
     }
 
-    // Encriptar la contraseña
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    // Crear el usuario
     const newUser = this.userRepository.create({
-      username,
-      email,
+      firstname: createUserDto.firstname,
+      lastname: createUserDto.lastname,
+      username: createUserDto.username,
+      email: createUserDto.email,
       password: hashedPassword,
     });
 
@@ -39,20 +38,16 @@ export class AuthService {
     return { message: 'Usuario registrado exitosamente' };
   }
 
-  // INICIO DE SESIÓN
   async login(loginUserDto: LoginUserDto): Promise<{ accessToken: string }> {
     const { username, password } = loginUserDto;
 
-    // Buscar usuario por username
     const user = await this.userRepository.findOne({ where: { username } });
     if (!user) throw new UnauthorizedException('Incorrect Username');
 
-    // Verificar la contraseña
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) throw new UnauthorizedException('Incorrect Password');
 
-    // Generar token JWT
-    const payload = { id: user.id, username: user.username,email: user.email, role: user.role, firstname: user.firstname, lastname: user.lastname, phone: user.phone, country: user.country, city: user.city, postalcode: user.postalcode };
+    const payload = { id: user.id, username: user.username,email: user.email, role: user.role, firstname: user.firstname, lastname: user.lastname, bibliography: user.bibliography , phone: user.phone, country: user.country, city: user.city, postalcode: user.postalcode, image: user.image };
     const accessToken = this.jwtService.sign(payload);
     //console.log(accessToken)
     

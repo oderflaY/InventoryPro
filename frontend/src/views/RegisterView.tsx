@@ -8,7 +8,7 @@ export default function RegisterView() {
                 <RegisterForm/>
             </div>
 
-            <nav className="pb-5 font-medium">
+            <nav className=" font-medium">
                 <Link to="/auth/login">
                     Do you have an account? Sign In
                 </Link>

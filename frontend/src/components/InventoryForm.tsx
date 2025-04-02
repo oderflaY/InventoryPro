@@ -29,7 +29,7 @@ function InventoryForm() {
     };
 
     return (
-        <div className=" bg-white p-4 h-65 shadow-2xl rounded-lg">
+        <div className=" bg-white p-4 h-full shadow-2xl rounded-lg">
             <h2 className="text-xl font-bold mb-4">Add new Inventory</h2>
             <form onSubmit={handleSubmit}>
                 <div className="mb-4 grid grid-cols-2 gap-x-5 gap-y-7 pl-4 pr-4">
